@@ -5,8 +5,9 @@
             <a class="navbar-brand" href="/ads">Adlister</a>
         </div>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="/login">Login</a></li>
+            <li><a href="/index.jsp">Home</a></li>
+            <li><a href="/login.jsp">Login</a></li>
+            <li><a href="${pageContext.request.contextPath}/pizza-order">Order</a></li>
         </ul>
-    </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
