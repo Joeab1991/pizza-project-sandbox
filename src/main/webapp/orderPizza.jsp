@@ -62,11 +62,11 @@ don't worry about styling--%>
                                                 Garlic seasoned crust with a rich, buttery taste.
                                             </li>
                                             <li class="list-group-item text-start">
-                                                <input class="form-check-input me-1" type="radio" value="hand-tossed-small" id="hand-tossed-small" name="crust">
+                                                <input class="form-check-input me-1" type="radio" value="Hand Tossed, Small" id="hand-tossed-small" name="crust">
                                                 <label class="form-check-label" for="hand-tossed-small">Small (10")</label>
                                             </li>
                                             <li class="list-group-item text-start">
-                                                <input class="form-check-input me-1" type="radio" value="hand-tossed-medium" id="hand-tossed-medium" name="crust">
+                                                <input class="form-check-input me-1" type="radio" value="Hand Tossed, Medium" id="hand-tossed-medium" name="crust">
                                                 <label class="form-check-label" for="hand-tossed-medium">Medium (12")</label>
                                             </li>
                                         </ul>
@@ -80,11 +80,11 @@ don't worry about styling--%>
                                                 Thin enough for optimum crispy to crunchy ratio.
                                             </li>
                                             <li class="list-group-item text-start">
-                                                <input class="form-check-input me-1" type="radio" value="crispy-medium" id="crispy-medium" name="crust">
+                                                <input class="form-check-input me-1" type="radio" value="Crispy, Medium" id="crispy-medium" name="crust">
                                                 <label class="form-check-label" for="crispy-medium">Medium (12")</label>
                                             </li>
                                             <li class="list-group-item text-start">
-                                                <input class="form-check-input me-1" type="radio" value="crispy-large" id="crispy-large" name="crust">
+                                                <input class="form-check-input me-1" type="radio" value="Crispy, Large" id="crispy-large" name="crust">
                                                 <label class="form-check-label" for="crispy-large">Large (14")</label>
                                             </li>
                                         </ul>
