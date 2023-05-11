@@ -113,7 +113,7 @@ don't worry about styling--%>
                                                 <label for="amount-of-cheese">How much?</label>
                                             </li>
                                             <li class="list-group-item text-start form-label">
-                                                <select name="cheese-amount" id="amount-of-cheese" class="form-select">
+                                                <select name="cheese" id="amount-of-cheese" class="form-select">
                                                     <option value="Light">Light</option>
                                                     <option value="Normal">Normal</option>
                                                     <option value="Extra">Extra</option>
@@ -133,7 +133,7 @@ don't worry about styling--%>
                                                 <label for="sauce-type">What kind?</label>
                                             </li>
                                             <li class="list-group-item text-start form-label">
-                                                <select name="sauce-type" id="sauce-type" class="form-select">
+                                                <select name="sauce" id="sauce-type" class="form-select">
                                                     <option value="Pizza Sauce">Pizza Sauce</option>
                                                     <option value="Alfredo Sauce">Alfredo Sauce</option>
                                                     <option value="BBQ Sauce">BBQ Sauce</option>
@@ -145,7 +145,7 @@ don't worry about styling--%>
                                                 <label for="amount-of-sauce">How much?</label>
                                             </li>
                                             <li class="list-group-item text-start form-label">
-                                                <select name="sauce-amount" id="amount-of-sauce" class="form-select">
+                                                <select name="sauce" id="amount-of-sauce" class="form-select">
                                                     <option value="Light">Light</option>
                                                     <option value="Normal">Normal</option>
                                                     <option value="Extra">Extra</option>
@@ -178,19 +178,19 @@ don't worry about styling--%>
                                     <form id="meats-selection" class="pizza-selection" action="/pizza-order" method="post">
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item text-start">
-                                                <input class="form-check-input me-1" type="checkbox" value="Beef" id="topping-meat-beef" name="topping-meat">
+                                                <input class="form-check-input me-1" type="checkbox" value="Beef" id="topping-meat-beef" name="toppings">
                                                 <label class="form-check-label" for="topping-meat-beef">Beef</label>
                                             </li>
                                             <li class="list-group-item text-start">
-                                                <input class="form-check-input me-1" type="checkbox" value="Ham" id="topping-meat-ham" name="topping-meat">
+                                                <input class="form-check-input me-1" type="checkbox" value="Ham" id="topping-meat-ham" name="toppings">
                                                 <label class="form-check-label" for="topping-meat-ham">Ham</label>
                                             </li>
                                             <li class="list-group-item text-start">
-                                                <input class="form-check-input me-1" type="checkbox" value="Philly Steak" id="topping-meat-philly-steak" name="topping-meat">
+                                                <input class="form-check-input me-1" type="checkbox" value="Philly Steak" id="topping-meat-philly-steak" name="toppings">
                                                 <label class="form-check-label" for="topping-meat-philly-steak">Philly Steak</label>
                                             </li>
                                             <li class="list-group-item text-start">
-                                                <input class="form-check-input me-1" type="checkbox" value="Bacon" id="topping-meat-bacon" name="topping-meat">
+                                                <input class="form-check-input me-1" type="checkbox" value="Bacon" id="topping-meat-bacon" name="toppings">
                                                 <label class="form-check-label" for="topping-meat-bacon">Bacon</label>
                                             </li>
                                         </ul>
@@ -203,19 +203,19 @@ don't worry about styling--%>
                                     <form id="non-meats-selection" class="pizza-selection" action="/pizza-order" method="post">
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item text-start">
-                                                <input class="form-check-input me-1" type="checkbox" value="Green Peppers" id="topping-other-green-peppers" name="topping-other">
+                                                <input class="form-check-input me-1" type="checkbox" value="Green Peppers" id="topping-other-green-peppers" name="toppings">
                                                 <label class="form-check-label" for="topping-other-green-peppers">Green Peppers</label>
                                             </li>
                                             <li class="list-group-item text-start">
-                                                <input class="form-check-input me-1" type="checkbox" value="Mushrooms" id="topping-other-mushrooms" name="topping-other">
+                                                <input class="form-check-input me-1" type="checkbox" value="Mushrooms" id="topping-other-mushrooms" name="toppings">
                                                 <label class="form-check-label" for="topping-other-mushrooms">Mushrooms</label>
                                             </li>
                                             <li class="list-group-item text-start">
-                                                <input class="form-check-input me-1" type="checkbox" value="Onions" id="topping-other-onions" name="topping-other">
+                                                <input class="form-check-input me-1" type="checkbox" value="Onions" id="topping-other-onions" name="toppings">
                                                 <label class="form-check-label" for="topping-other-onions">Onions</label>
                                             </li>
                                             <li class="list-group-item text-start">
-                                                <input class="form-check-input me-1" type="checkbox" value="Jalapeño Peppers" id="topping-other-jalapeno-peppers" name="topping-other">
+                                                <input class="form-check-input me-1" type="checkbox" value="Jalapeño Peppers" id="topping-other-jalapeno-peppers" name="toppings">
                                                 <label class="form-check-label" for="topping-other-jalapeno-peppers">Jalapeño Peppers</label>
                                             </li>
                                         </ul>

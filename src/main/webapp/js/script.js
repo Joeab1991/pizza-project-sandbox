@@ -143,7 +143,7 @@ submitOrderBtn.addEventListener("click", function() {
 			return response.text();
 		})
 		.then(function(data) {
-			console.log(data);
+			document.body.innerHTML = data;
 		})
 		.catch(function(error) {
 			console.error(error);
@@ -151,6 +151,7 @@ submitOrderBtn.addEventListener("click", function() {
 	// for (const [name, value] of formData.entries()) {
 	// 	console.log(`${name}: ${value}`);
 	// }
+
 });
 
 function shouldIncludeElement(element) {
