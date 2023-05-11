@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: joeab
@@ -321,17 +322,13 @@ don't worry about styling--%>
             </div>
         </div>
     </div>
-<%--    <c:if test="${post != null}">--%>
-<%--        <h2>Your Order Summary:</h2>--%>
-<%--        <h3 id="crust-and-size">${post.title}</h3>--%>
-<%--        <p>${post.post}</p>--%>
-<%--        <p>Topics:</p>--%>
-<%--        <ul>--%>
-<%--            <c:forEach var="topic" items="${post.topics}">--%>
-<%--                <li>${topic}</li>--%>
-<%--            </c:forEach>--%>
-<%--        </ul>--%>
-<%--    </c:if>--%>
+    <c:if test="${order != null}">
+        <h2>Your Order Summary:</h2>
+        <h3 id="crust-and-size">${order.crust}</h3>
+        <p>${order.cheese}</p>
+        <p>${order.sauce}</p>
+        <p>${order.toppings}</p>
+    </c:if>
     <!-- SCRIPTS -->
     <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>

@@ -3,8 +3,8 @@ package models;
 public class Order {
 	private String crust;
 	private String cheese;
-	private String[] sauce;
-	private String[] toppings;
+	private String sauce;
+	private String toppings;
 	private String street;
 	private String city;
 	private String state;
@@ -13,7 +13,7 @@ public class Order {
 	public Order() {
 	}
 
-	public Order(String crust, String cheese, String[] sauce, String[] toppings, String street, String city,
+	public Order(String crust, String cheese, String sauce, String toppings, String street, String city,
 				 String state, String zip) {
 		this.crust = crust;
 		this.cheese = cheese;
@@ -41,19 +41,19 @@ public class Order {
 		this.cheese = cheese;
 	}
 
-	public String[] getSauce() {
+	public String getSauce() {
 		return sauce;
 	}
 
-	public void setSauce(String[] sauce) {
+	public void setSauce(String sauce) {
 		this.sauce = sauce;
 	}
 
-	public String[] getToppings() {
+	public String getToppings() {
 		return toppings;
 	}
 
-	public void setToppings(String[] toppings) {
+	public void setToppings(String toppings) {
 		this.toppings = toppings;
 	}
 
