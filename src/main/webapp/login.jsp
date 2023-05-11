@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <%
     if (request.getMethod().equalsIgnoreCase("post")) {
         String username = request.getParameter("username");
