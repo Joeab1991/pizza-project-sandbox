@@ -2,7 +2,6 @@ package models;
 
 public class Order {
 	private String crust;
-	private String size;
 	private String cheese;
 	private String[] sauce;
 	private String[] toppings;
@@ -14,10 +13,9 @@ public class Order {
 	public Order() {
 	}
 
-	public Order(String crust, String size, String cheese, String[] sauce, String[] toppings, String street, String city,
+	public Order(String crust, String cheese, String[] sauce, String[] toppings, String street, String city,
 				 String state, String zip) {
 		this.crust = crust;
-		this.size = size;
 		this.cheese = cheese;
 		this.sauce = sauce;
 		this.toppings = toppings;
@@ -33,14 +31,6 @@ public class Order {
 
 	public void setCrust(String crust) {
 		this.crust = crust;
-	}
-
-	public String getSize() {
-		return size;
-	}
-
-	public void setSize(String size) {
-		this.size = size;
 	}
 
 	public String getCheese() {
