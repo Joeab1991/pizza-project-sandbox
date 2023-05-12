@@ -7,14 +7,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 
-<%--A user goes to /pizza-order and sees a pizza order form. This form features choices to select the crust type,
-sauce type, size type (use select inputs), toppings (checkboxes), and delivery address (text input).
-Use System.out.println to output the values submitted by the user.
-
-use a POST request on the form
-use one JSP and one servlet
-don't worry about styling--%>
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -49,7 +41,7 @@ don't worry about styling--%>
                     <div class="card-body border border-top-0 rounded-top p-0">
                         <div class="container p-0">
                             <h5 class="card-title text-start bg-primary text-white p-2" style="margin: 2px -2px 3px;">Choose Size and Crust</h5>
-                            <form id="crust-selection" class="pizza-selection" action="/pizza-order" method="post">
+                            <form id="crust-selection" class="pizza-selection" action="${pageContext.request.contextPath}/pizza-order" method="post">
                                 <div class="container justify-content-between">
                                     <div class="card m-2 mt-3">
                                         <div class="card-header text-start">
@@ -105,7 +97,7 @@ don't worry about styling--%>
                                     <div class="card-header text-start">
                                         Cheese
                                     </div>
-                                    <form id="cheese-selection" class="pizza-selection" action="/pizza-order" method="post">
+                                    <form id="cheese-selection" class="pizza-selection" action="${pageContext.request.contextPath}/pizza-order" method="post">
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item text-start">
                                                 <label for="amount-of-cheese">How much?</label>
@@ -125,7 +117,7 @@ don't worry about styling--%>
                                     <div class="card-header text-start">
                                         Sauce
                                     </div>
-                                    <form id="sauce-selection" class="pizza-selection" action="/pizza-order" method="post">
+                                    <form id="sauce-selection" class="pizza-selection" action="${pageContext.request.contextPath}/pizza-order" method="post">
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item text-start">
                                                 <label for="sauce-type">What kind?</label>
@@ -173,7 +165,7 @@ don't worry about styling--%>
                                     <div class="card-header text-start">
                                         Choose Meats
                                     </div>
-                                    <form id="meats-selection" class="pizza-selection" action="/pizza-order" method="post">
+                                    <form id="meats-selection" class="pizza-selection" action="${pageContext.request.contextPath}/pizza-order" method="post">
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item text-start">
                                                 <input class="form-check-input me-1" type="checkbox" value="Beef" id="topping-meat-beef" name="toppings">
@@ -198,7 +190,7 @@ don't worry about styling--%>
                                     <div class="card-header text-start">
                                         Choose Non-Meats
                                     </div>
-                                    <form id="non-meats-selection" class="pizza-selection" action="/pizza-order" method="post">
+                                    <form id="non-meats-selection" class="pizza-selection" action="${pageContext.request.contextPath}/pizza-order" method="post">
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item text-start">
                                                 <input class="form-check-input me-1" type="checkbox" value="Green Peppers" id="topping-other-green-peppers" name="toppings">
@@ -237,7 +229,7 @@ don't worry about styling--%>
                                     <div class="card-header text-start">
                                         Enter a delivery address
                                     </div>
-                                    <form id="checkout-form" class="row g-3 p-2" action="/pizza-order" method="post">
+                                    <form id="checkout-form" class="row g-3 p-2" action="${pageContext.request.contextPath}/pizza-order" method="post">
                                         <div class="col-12 text-start">
                                             <label for="street" class="form-label">Street:</label>
                                             <input type="text" class="form-control" id="street" name="street" placeholder="1234 Main St" required>
@@ -319,28 +311,27 @@ don't worry about styling--%>
             </div>
         </div>
     </div>
-    <c:if test="${order != null}">
-        <div class="container pb-5">
-            <div class="card text-center p-0">
-                <div class="card-header">
-                    <h2>Your order has been placed!</h2>
-                </div>
-                <div class="card-body">
-                    <h2>Your Order Summary:</h2>
-                    <p>Crust: ${order.crust}</p>
-                    <p>Cheese: ${order.cheese}</p>
-                    <p>Sauce: ${order.sauce}</p>
-                    <p>Toppings: ${order.toppings}</p>
-                </div>
-                <div class="card-body">
-                    <h2>Your Order will be delivered to:</h2>
-                    <p>${order.name}</p>
-                    <p>${order.street}</p>
-                    <p>${order.city}, ${order.state} ${order.zip}</p>
-                </div>
+<c:if test="${order != null}">
+    <div class="container pb-5">
+        <div class="card text-center p-0">
+            <div class="card-header">
+                <h2>Your order has been placed!</h2>
+            </div>
+            <div class="card-body">
+                <h2>Your Order Summary:</h2>
+                <p>Crust: ${order.crust}</p>
+                <p>Cheese: ${order.cheese}</p>
+                <p>Sauce: ${order.sauce}</p>
+                <p>Toppings: ${order.toppings}</p>
+            </div>
+            <div class="card-body">
+                <h2>Your Order will be delivered to:</h2>
+                <p>${order.street}</p>
+                <p>${order.city}, ${order.state} ${order.zip}</p>
             </div>
         </div>
-    </c:if>
+    </div>
+</c:if>
     <!-- SCRIPTS -->
     <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>

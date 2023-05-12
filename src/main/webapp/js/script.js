@@ -139,6 +139,9 @@ submitOrderBtn.addEventListener("click", function() {
 		.then(function(response) {
 			console.log(response.text());
 		})
+		.then(function(html) {
+			document.innerHTML = html;
+		})
 		.catch(function(error) {
 			console.error(error);
 		});
