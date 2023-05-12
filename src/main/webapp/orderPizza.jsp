@@ -21,9 +21,6 @@ don't worry about styling--%>
     <jsp:include page="partials/head.jsp">
         <jsp:param name="title" value="Order Pizza" />
     </jsp:include>
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://kit.fontawesome.com/a470e83216.css" crossorigin="anonymous">
 </head>
 <body>
     <div class="container pb-5">
@@ -323,11 +320,26 @@ don't worry about styling--%>
         </div>
     </div>
     <c:if test="${order != null}">
-        <h2>Your Order Summary:</h2>
-        <h3 id="crust-and-size">${order.crust}</h3>
-        <p>${order.cheese}</p>
-        <p>${order.sauce}</p>
-        <p>${order.toppings}</p>
+        <div class="container pb-5">
+            <div class="card text-center p-0">
+                <div class="card-header">
+                    <h2>Your order has been placed!</h2>
+                </div>
+                <div class="card-body">
+                    <h2>Your Order Summary:</h2>
+                    <p>Crust: ${order.crust}</p>
+                    <p>Cheese: ${order.cheese}</p>
+                    <p>Sauce: ${order.sauce}</p>
+                    <p>Toppings: ${order.toppings}</p>
+                </div>
+                <div class="card-body">
+                    <h2>Your Order will be delivered to:</h2>
+                    <p>${order.name}</p>
+                    <p>${order.street}</p>
+                    <p>${order.city}, ${order.state} ${order.zip}</p>
+                </div>
+            </div>
+        </div>
     </c:if>
     <!-- SCRIPTS -->
     <script src="js/script.js"></script>

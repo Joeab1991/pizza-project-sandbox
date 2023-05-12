@@ -137,10 +137,7 @@ submitOrderBtn.addEventListener("click", function() {
 		body: formData
 	})
 		.then(function(response) {
-			return response.text();
-		})
-		.then(function(data) {
-			document.body.innerHTML = data;
+			console.log(response.text());
 		})
 		.catch(function(error) {
 			console.error(error);
