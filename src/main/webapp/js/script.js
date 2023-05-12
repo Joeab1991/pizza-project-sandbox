@@ -9,9 +9,6 @@ const checkoutTabPane = document.getElementById("checkout-tab-pane");
 const submitOrderBtn = document.getElementById("submit-order-btn");
 const forms = document.getElementsByTagName("form");
 
-console.log(forms);
-
-
 document.getElementById("size-and-crust-next-step-btn").onclick = function() {
 
 // switch to the "Cheese and Sauce" tab
@@ -140,18 +137,11 @@ submitOrderBtn.addEventListener("click", function() {
 		body: formData
 	})
 		.then(function(response) {
-			return response.text();
-		})
-		.then(function(data) {
-			document.body.innerHTML = data;
+			console.log(response.text());
 		})
 		.catch(function(error) {
 			console.error(error);
 		});
-	// for (const [name, value] of formData.entries()) {
-	// 	console.log(`${name}: ${value}`);
-	// }
-
 });
 
 function shouldIncludeElement(element) {
