@@ -13,6 +13,20 @@ public class Order {
 	public Order() {
 	}
 
+	@Override
+	public String toString() {
+		return "Order{" +
+				"crust='" + crust + '\'' +
+				", cheese='" + cheese + '\'' +
+				", sauce='" + sauce + '\'' +
+				", toppings='" + toppings + '\'' +
+				", street='" + street + '\'' +
+				", city='" + city + '\'' +
+				", state='" + state + '\'' +
+				", zip='" + zip + '\'' +
+				'}';
+	}
+
 	public Order(String crust, String cheese, String sauce, String toppings, String street, String city,
 				 String state, String zip) {
 		this.crust = crust;

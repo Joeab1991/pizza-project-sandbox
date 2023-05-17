@@ -1,7 +1,6 @@
 package controllers;
 
 import models.Order;
-
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -47,8 +46,7 @@ public class PizzaServlet extends HttpServlet {
 		toppings = toppingSpecs.toString();
 
 		Order customerOrder = new Order(crust, cheese, sauce, toppings, street, city, state, zip);
-
 		request.setAttribute("order", customerOrder);
-		request.getRequestDispatcher("/orderPizza.jsp").forward(request, response);
+		request.getRequestDispatcher("/orderSummary.jsp").forward(request, response);
 	}
 }

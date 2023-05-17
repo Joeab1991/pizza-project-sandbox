@@ -7,7 +7,7 @@ const toppingsTabPane = document.getElementById("toppings-tab-pane");
 const checkoutTab = document.getElementById("checkout-tab");
 const checkoutTabPane = document.getElementById("checkout-tab-pane");
 const submitOrderBtn = document.getElementById("submit-order-btn");
-const forms = document.getElementsByTagName("form");
+const orderForm = document.getElementById("pizza-order");
 
 document.getElementById("size-and-crust-next-step-btn").onclick = function() {
 
@@ -120,41 +120,6 @@ checkoutTabPane.setAttribute("aria-selected", "false");
 };
 
 //Submit all forms on the page
-submitOrderBtn.addEventListener("click", function() {
-	const formData = new FormData();
-
-	for (let i = 0; i < forms.length; i++) {
-		const form = forms[i];
-		for (let j = 0; j < form.elements.length; j++) {
-			const element = form.elements[j];
-			if (shouldIncludeElement(element)) {
-				formData.append(element.name, element.value);
-			}
-		}
-	}
-	fetch('/pizza-order', {
-		method: 'POST',
-		body: formData
-	})
-		.then(function(response) {
-			console.log(response.text());
-		})
-		.then(function(html) {
-			document.innerHTML = html;
-		})
-		.catch(function(error) {
-			console.error(error);
-		});
+submitOrderBtn.addEventListener("click", function () {
+	orderForm.submit();
 });
-
-function shouldIncludeElement(element) {
-	if (element.type === 'radio' || element.type === 'checkbox') {
-		return element.checked;
-	} else if (element.tagName === 'SELECT') {
-		return element.options[element.selectedIndex].value !== '';
-	} else if (element.tagName === 'INPUT') {
-		return element.type !== 'button' && element.type !== 'submit';
-	} else {
-		return false;
-	}
-}

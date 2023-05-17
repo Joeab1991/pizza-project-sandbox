@@ -35,13 +35,13 @@
                     </li>
                 </ul>
             </div>
-            <div class="tab-content" id="myTabContent">
-                <!--    SIZE AND CRUST PANE   -->
-                <div class="tab-pane fade show active" id="size-and-crust-tab-pane" role="tabpanel" aria-labelledby="size-and-crust-tab" tabindex="0">
-                    <div class="card-body border border-top-0 rounded-top p-0">
-                        <div class="container p-0">
-                            <h5 class="card-title text-start bg-primary text-white p-2" style="margin: 2px -2px 3px;">Choose Size and Crust</h5>
-                            <form id="crust-selection" class="pizza-selection" action="${pageContext.request.contextPath}/pizza-order" method="post">
+            <form id="pizza-order" action="/pizza-order" method="post">
+                <div class="tab-content" id="myTabContent">
+                    <!--    SIZE AND CRUST PANE   -->
+                    <div class="tab-pane fade show active" id="size-and-crust-tab-pane" role="tabpanel" aria-labelledby="size-and-crust-tab" tabindex="0">
+                        <div class="card-body border border-top-0 rounded-top p-0">
+                            <div class="container p-0">
+                                <h5 class="card-title text-start bg-primary text-white p-2" style="margin: 2px -2px 3px;">Choose Size and Crust</h5>
                                 <div class="container justify-content-between">
                                     <div class="card m-2 mt-3">
                                         <div class="card-header text-start">
@@ -80,24 +80,22 @@
                                         </ul>
                                     </div>
                                 </div>
-                            </form>
-                        </div>
-                        <div class="card-footer d-flex justify-content-end">
-                            <button class="btn btn-primary nav-link d-flex align-items-center justify-content-center active" id="size-and-crust-next-step-btn" data-bs-target="#cheese-and-sauce-tab" type="button" role="button" aria-controls="cheese-and-sauce" aria-selected="false" style="padding: 10px 20px;">Next Step ></button>
+                            </div>
+                            <div class="card-footer d-flex justify-content-end">
+                                <button class="btn btn-primary nav-link d-flex align-items-center justify-content-center active" id="size-and-crust-next-step-btn" data-bs-target="#cheese-and-sauce-tab" type="button" role="button" aria-controls="cheese-and-sauce" aria-selected="false" style="padding: 10px 20px;">Next Step ></button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!--    CHEESE AND SAUCE PANE   -->
-                <div class="tab-pane fade" id="cheese-and-sauce-tab-pane" role="button" aria-labelledby="cheese-and-sauce-tab" tabindex="0">
-                    <div class="card-body rounded-top border border-top-0 p-0">
-                        <div class="container p-0 rounded-top">
-                            <h5 class="card-title text-start bg-primary text-white p-2" style="margin: 2px -2px 3px;">Choose Cheese and Sauce</h5>
-                            <div class="container justify-content-between">
-                                <div class="card m-2 mt-3">
-                                    <div class="card-header text-start">
-                                        Cheese
-                                    </div>
-                                    <form id="cheese-selection" class="pizza-selection" action="${pageContext.request.contextPath}/pizza-order" method="post">
+                    <!--    CHEESE AND SAUCE PANE   -->
+                    <div class="tab-pane fade" id="cheese-and-sauce-tab-pane" role="button" aria-labelledby="cheese-and-sauce-tab" tabindex="0">
+                        <div class="card-body rounded-top border border-top-0 p-0">
+                            <div class="container p-0 rounded-top">
+                                <h5 class="card-title text-start bg-primary text-white p-2" style="margin: 2px -2px 3px;">Choose Cheese and Sauce</h5>
+                                <div class="container justify-content-between">
+                                    <div class="card m-2 mt-3">
+                                        <div class="card-header text-start">
+                                            Cheese
+                                        </div>
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item text-start">
                                                 <label for="amount-of-cheese">How much?</label>
@@ -111,13 +109,11 @@
                                                 </select>
                                             </li>
                                         </ul>
-                                    </form>
-                                </div>
-                                <div class="card m-2 mb-3 mt-3">
-                                    <div class="card-header text-start">
-                                        Sauce
                                     </div>
-                                    <form id="sauce-selection" class="pizza-selection" action="${pageContext.request.contextPath}/pizza-order" method="post">
+                                    <div class="card m-2 mb-3 mt-3">
+                                        <div class="card-header text-start">
+                                            Sauce
+                                        </div>
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item text-start">
                                                 <label for="sauce-type">What kind?</label>
@@ -143,29 +139,27 @@
                                                 </select>
                                             </li>
                                         </ul>
-                                    </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer d-flex justify-content-end">
+                                <div class="btn-group" role="group" aria-label="Previous and Next Button Group">
+                                    <button class="btn btn-primary nav-link d-flex align-items-center justify-content-center active" id="cheese-and-sauce-previous-step-btn" data-bs-target="#size-and-crust-tab" type="button" role="button" aria-controls="size-and-crust" aria-selected="false" style="padding: 10px 20px;">< Previous</button>
+                                    <button class="btn btn-primary nav-link d-flex align-items-center justify-content-center active" id="cheese-and-sauce-next-step-btn" data-bs-target="#toppings-tab" type="button" role="button" aria-controls="toppings" aria-selected="false" style="padding: 10px 20px;">Next Step ></button>
                                 </div>
                             </div>
                         </div>
-                        <div class="card-footer d-flex justify-content-end">
-                            <div class="btn-group" role="group" aria-label="Previous and Next Button Group">
-                                <button class="btn btn-primary nav-link d-flex align-items-center justify-content-center active" id="cheese-and-sauce-previous-step-btn" data-bs-target="#size-and-crust-tab" type="button" role="button" aria-controls="size-and-crust" aria-selected="false" style="padding: 10px 20px;">< Previous</button>
-                                <button class="btn btn-primary nav-link d-flex align-items-center justify-content-center active" id="cheese-and-sauce-next-step-btn" data-bs-target="#toppings-tab" type="button" role="button" aria-controls="toppings" aria-selected="false" style="padding: 10px 20px;">Next Step ></button>
-                            </div>
-                        </div>
                     </div>
-                </div>
-                <!--    TOPPINGS PANE   -->
-                <div class="tab-pane fade" id="toppings-tab-pane" role="tabpanel" aria-labelledby="toppings-tab" tabindex="0">
-                    <div class="card-body border border-top-0 rounded-top p-0">
-                        <div class="container p-0 rounded-top">
-                            <h5 class="card-title text-start bg-primary text-white p-2" style="margin: 2px -2px 3px;">Choose Toppings</h5>
-                            <div class="container justify-content-between">
-                                <div class="card m-2 mt-3">
-                                    <div class="card-header text-start">
-                                        Choose Meats
-                                    </div>
-                                    <form id="meats-selection" class="pizza-selection" action="${pageContext.request.contextPath}/pizza-order" method="post">
+                    <!--    TOPPINGS PANE   -->
+                    <div class="tab-pane fade" id="toppings-tab-pane" role="tabpanel" aria-labelledby="toppings-tab" tabindex="0">
+                        <div class="card-body border border-top-0 rounded-top p-0">
+                            <div class="container p-0 rounded-top">
+                                <h5 class="card-title text-start bg-primary text-white p-2" style="margin: 2px -2px 3px;">Choose Toppings</h5>
+                                <div class="container justify-content-between">
+                                    <div class="card m-2 mt-3">
+                                        <div class="card-header text-start">
+                                            Choose Meats
+                                        </div>
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item text-start">
                                                 <input class="form-check-input me-1" type="checkbox" value="Beef" id="topping-meat-beef" name="toppings">
@@ -184,13 +178,11 @@
                                                 <label class="form-check-label" for="topping-meat-bacon">Bacon</label>
                                             </li>
                                         </ul>
-                                    </form>
-                                </div>
-                                <div class="card m-2 mt-3">
-                                    <div class="card-header text-start">
-                                        Choose Non-Meats
                                     </div>
-                                    <form id="non-meats-selection" class="pizza-selection" action="${pageContext.request.contextPath}/pizza-order" method="post">
+                                    <div class="card m-2 mt-3">
+                                        <div class="card-header text-start">
+                                            Choose Non-Meats
+                                        </div>
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item text-start">
                                                 <input class="form-check-input me-1" type="checkbox" value="Green Peppers" id="topping-other-green-peppers" name="toppings">
@@ -209,27 +201,25 @@
                                                 <label class="form-check-label" for="topping-other-jalapeno-peppers">Jalapeño Peppers</label>
                                             </li>
                                         </ul>
-                                    </form>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card-footer d-flex justify-content-end">
-                            <button class="btn btn-primary nav-link d-flex align-items-center justify-content-center active" id="toppings-previous-step-btn" data-bs-target="#cheese-and-sauce-tab" type="button" role="button" aria-controls="cheese-and-sauce" aria-selected="false" style="padding: 10px 20px;">< Previous</button>
-                            <button class="btn btn-primary d-flex justify-content-around align-items-center" id="checkout-btn">Checkout<i class="fa-solid fa-cart-shopping-fast" style="margin-left: 5px;"></i></button>
+                            <div class="card-footer d-flex justify-content-end">
+                                <button class="btn btn-primary nav-link d-flex align-items-center justify-content-center active" id="toppings-previous-step-btn" data-bs-target="#cheese-and-sauce-tab" type="button" role="button" aria-controls="cheese-and-sauce" aria-selected="false" style="padding: 10px 20px;">< Previous</button>
+                                <button class="btn btn-primary d-flex justify-content-around align-items-center" id="checkout-btn">Checkout<i class="fa-solid fa-cart-shopping-fast" style="margin-left: 5px;"></i></button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!--    CHECKOUT PANE   -->
-                <div class="tab-pane fade" id="checkout-tab-pane" role="tabpanel" aria-labelledby="checkout-tab" tabindex="0">
-                    <div class="card-body border border-top-0 rounded-top p-0">
-                        <div class="container p-0 rounded-top">
-                            <h5 class="card-title text-start bg-primary text-white p-2" style="margin: 2px -2px 3px;">Checkout</h5>
-                            <div class="container justify-content-start">
-                                <div class="card m-2 mt-3">
-                                    <div class="card-header text-start">
-                                        Enter a delivery address
-                                    </div>
-                                    <form id="checkout-form" class="row g-3 p-2" action="${pageContext.request.contextPath}/pizza-order" method="post">
+                    <!--    CHECKOUT PANE   -->
+                    <div class="tab-pane fade" id="checkout-tab-pane" role="tabpanel" aria-labelledby="checkout-tab" tabindex="0">
+                        <div class="card-body border border-top-0 rounded-top p-0">
+                            <div class="container p-0 rounded-top">
+                                <h5 class="card-title text-start bg-primary text-white p-2" style="margin: 2px -2px 3px;">Checkout</h5>
+                                <div class="container justify-content-start">
+                                    <div class="card m-2 mt-3">
+                                        <div class="card-header text-start">
+                                            Enter a delivery address
+                                        </div>
                                         <div class="col-12 text-start">
                                             <label for="street" class="form-label">Street:</label>
                                             <input type="text" class="form-control" id="street" name="street" placeholder="1234 Main St" required>
@@ -298,40 +288,19 @@
                                             <label for="zip" class="form-label">Zip:</label>
                                             <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip" required>
                                         </div>
-                                    </form>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card-footer d-flex justify-content-end">
-                            <button class="btn btn-primary nav-link d-flex align-items-center justify-content-center active" id="checkout-previous-step-btn" data-bs-target="#toppings-tab" type="button" role="button" aria-controls="toppings" aria-selected="false" style="padding: 10px 20px;">Previous</button>
-                            <button type="submit" class="btn btn-primary nav-link d-flex align-items-center justify-content-center active" id="submit-order-btn" data-bs-target="#toppings-tab" role="button" aria-controls="order-submit" aria-selected="false" style="padding: 10px 20px;">Submit</button>
+                            <div class="card-footer d-flex justify-content-end">
+                                <button class="btn btn-primary nav-link d-flex align-items-center justify-content-center active" id="checkout-previous-step-btn" data-bs-target="#toppings-tab" type="button" role="button" aria-controls="toppings" aria-selected="false" style="padding: 10px 20px;">Previous</button>
+                                <button type="submit" class="btn btn-primary nav-link d-flex align-items-center justify-content-center active" id="submit-order-btn" data-bs-target="#toppings-tab" role="button" aria-controls="order-submit" aria-selected="false" style="padding: 10px 20px;">Submit</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
-<c:if test="${order != null}">
-    <div class="container pb-5">
-        <div class="card text-center p-0">
-            <div class="card-header">
-                <h2>Your order has been placed!</h2>
-            </div>
-            <div class="card-body">
-                <h2>Your Order Summary:</h2>
-                <p>Crust: ${order.crust}</p>
-                <p>Cheese: ${order.cheese}</p>
-                <p>Sauce: ${order.sauce}</p>
-                <p>Toppings: ${order.toppings}</p>
-            </div>
-            <div class="card-body">
-                <h2>Your Order will be delivered to:</h2>
-                <p>${order.street}</p>
-                <p>${order.city}, ${order.state} ${order.zip}</p>
-            </div>
-        </div>
-    </div>
-</c:if>
     <!-- SCRIPTS -->
     <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
